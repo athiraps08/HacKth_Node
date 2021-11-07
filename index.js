@@ -91,6 +91,16 @@ app.post('/search',async(req,res)=>{
     }
 })
 
+//search single
+app.post('/searchUpdt',async(req,res)=>{
+    try{
+        var result=await movModel.find(req.body)
+        res.json(result)
+    }
+    catch(error){
+        res.status(500).send(error)
+    }
+})
 
 
 
